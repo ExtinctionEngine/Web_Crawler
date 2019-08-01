@@ -3,7 +3,7 @@ from selenium import webdriver
 
 MAX_PAGE_NUM = 16
 
-with open('各平台运营信息.csv', 'w', encoding="utf-8") as table:
+with open('platforms_info_table.csv', 'w', encoding="utf-8") as table:
     csv_writer = csv.writer(table, delimiter='\t')
     csv_writer.writerow(['机构名称','累计借款金额（万元）','累计借款笔数（笔）','累计借款人数量（人）','累计出借人数量（人）','项目逾期率','金额逾期率'])
 
@@ -23,7 +23,7 @@ for i in range(1, MAX_PAGE_NUM + 1):
     money_default_rates = driver.find_elements_by_xpath('//tbody[@id="runinfotbody"]//tr//td[7]')
 
     num_page_items = len(names)
-    with open('各平台运营信息.csv', 'a', encoding="utf-8") as table:
+    with open('platforms_info_table', 'a', encoding="utf-8") as table:
         for i in range(num_page_items):
             table.write(names[i].text + "\t" + money_amounts[i].text + "\t" + projects_amounts[i].text + "\t"
                         + borrowers_amounts[i].text + "\t" + lenders_amounts[i].text + "\t"
