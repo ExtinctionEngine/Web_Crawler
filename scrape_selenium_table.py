@@ -9,7 +9,7 @@ with open('各平台运营信息.csv', 'w', encoding="utf-8") as table:
 
 driver = webdriver.Chrome()
 
-for i in range(1, MAX_PAGE_NUM +1):
+for i in range(1, MAX_PAGE_NUM + 1):
     url = "https://dp.nifa.org.cn/HomePage?method=getOperateInfo&currentPage=" + str(i)
 
     driver.get(url)
