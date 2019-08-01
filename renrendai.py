@@ -5,7 +5,9 @@ MAX_PAGE_NUM = 16
 
 with open('renrendai.csv', 'w', encoding="utf-8") as table:
     csv_writer = csv.writer(table, delimiter='\t')
-    csv_writer.writerow(['机构名称','累计借款金额（万元）','累计借款笔数（笔）','累计借款人数量（人）','累计出借人数量（人）','项目逾期率','金额逾期率'])
+    csv_writer.writerow(['项目名称', '项目编号', '项目简介', '项目销售链接', '借款用途', '借款金额（元）', '借款期限', '年化利率',
+                         '预计起息日', '还款方式', '还款方式说明', '项目状态', '募集开始时间', '还款保障措施', '还款来源',
+                         '项目风险评估', '相关费用', '合同模板号', '出借人适当性管理提示', '借款方类型'])
 
 driver = webdriver.Chrome()
 
