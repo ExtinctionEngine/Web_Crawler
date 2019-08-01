@@ -23,7 +23,7 @@ for i in range(1, MAX_PAGE_NUM + 1):
     money_default_rates = driver.find_elements_by_xpath('//tbody[@id="runinfotbody"]//tr//td[7]')
 
     num_page_items = len(names)
-    with open('platforms_info_table', 'a', encoding="utf-8") as table:
+    with open('platforms_info_table.csv', 'a', encoding="utf-8") as table:
         for i in range(num_page_items):
             table.write(names[i].text + "\t" + money_amounts[i].text + "\t" + projects_amounts[i].text + "\t"
                         + borrowers_amounts[i].text + "\t" + lenders_amounts[i].text + "\t"
